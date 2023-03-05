@@ -12,8 +12,17 @@ end;
 function ngto(n:longint):boolean;
 var i:longint;
 begin
+if (n = 0) or (n = 1) then exit(false);
 for i:=2 to trunc(sqrt(n)) do if n mod i = 0 then exit(false);
 exit(true);
+end;
+function isPrime(m:longint):boolean;
+var i,dem,so:longint;
+begin
+//so:=m;
+dem:=1;
+for i:=1 to m div 2 do if m mod i = 0 then inc(dem);
+if dem = 2 then exit(true) else exit(false);
 end;
 procedure giai;
 var count:longint;
