@@ -18,7 +18,12 @@ begin
 n:=length(s);
 for i:=1 to n do val(s[i],a[i]);
 for i:=n downto 1 do if a[i]<a[i+1] then break;
-if i=1 then
+if (n=2) and (a[1]<a[2]) then
+        begin
+        write(a[2],a[1]);
+        halt;
+        end;
+if i<=1 then
         begin
         write(0);
         halt;
