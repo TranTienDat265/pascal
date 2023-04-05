@@ -33,6 +33,6 @@ begin
 end;
 begin
 clrscr;
-write(dq(13,1));
+write(dq(8,1));
 readln;
 end.

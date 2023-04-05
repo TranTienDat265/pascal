@@ -1,7 +1,4 @@
 program Kth_digit;
-{
-give up is not in my vocabulary
-}
 var aux,digit,ans,helpers,k:int64;
 i:longint;
 f:text;

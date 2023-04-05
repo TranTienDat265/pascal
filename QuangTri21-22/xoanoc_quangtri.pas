@@ -2,17 +2,23 @@ program xoanoc_2;
 uses crt;
 var a:array [1..10000,1..10000] of longint;
 b:array [1..20000] of longint;
-temp,i,j,n,m,t,x1,x2,y1,y2,k:longint;                  
+temp,i,j,n,m,t,x1,x2,y1,y2,k:longint;
+f:text;
 procedure nhap;
 begin
-write('Nhap n:  '); readln(n);
-write('Nhap m:  '); readln(m);
+assign(f,'D:\TRANTIENDAT\QuangTri21-22\xoanoc.inp.txt');
+reset(f);
+readln(f,n,m);
 for i:=1 to n do
-for j:=1 to m do 
-begin 
-write('Nhap A[',i,',',j,']'); 
-readln(a[i,j]); inc(t); b[t]:=a[i,j]; 
+begin
+for j:=1 to m do
+begin
+//write('Nhap A[',i,',',j,']');
+read(f,a[i,j]); inc(t); b[t]:=a[i,j];
 end;
+readln(f);
+end;
+close(f);
 end;
 procedure giai;
 begin
@@ -22,8 +28,8 @@ x2:=m;
 y1:=1;
 y2:=n;
 for i:=1 to t-1 do
-for j:=i+1 to t do 
-if b[i]>b[j] then 
+for j:=i+1 to t do
+if b[i]>b[j] then
 begin
 temp:=b[j];
 b[j]:=b[i];
